@@ -9,7 +9,14 @@ function activate(context) {
 
     let disposable = vscode.commands.registerCommand('envSwitcher.selectEnvironment', async () => {
         const config = vscode.workspace.getConfiguration('envSwitcher');
-        const envOptions = config.get('options') || ['int06', 'int07', 'int08'];
+        const envOptions = config.get('options');
+
+        // Check if envOptions is undefined or empty
+        if (!envOptions || envOptions.length === 0) {
+            vscode.window.showErrorMessage('No environment options configured. Please check your settings.');
+            return;
+        }
+
         const targetSetting = config.get('targetSetting') || 'playwright.env.ENV';
 
         const selected = await vscode.window.showQuickPick(envOptions, {
@@ -40,7 +47,7 @@ function updateStatusBar(statusBarItem) {
     const targetSetting = config.get('targetSetting') || 'playwright.env.ENV';
     const targetConfig = vscode.workspace.getConfiguration();
     const currentEnv = targetConfig.get(targetSetting);
-    statusBarItem.text = `ENV: ${currentEnv || 'Not set'}`;
+    statusBarItem.text = `${currentEnv || 'Not set'}`;
     statusBarItem.show();
 }
 

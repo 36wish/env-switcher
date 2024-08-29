@@ -2,6 +2,9 @@
   "name": "env-switcher",
   "displayName": "env switcher",
   "description": "Switch ENV in the status bar",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com"},
   "version": "0.3.0",
   "engines": {
     "vscode": "^1.60.0"
@@ -10,7 +13,7 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:envSwitcher.selectEnvironment"
+    "*"
   ],
   "main": "./extension.js",
   "contributes": {
