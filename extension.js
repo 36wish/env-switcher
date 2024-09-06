@@ -80,7 +80,7 @@ function updateStatusBar(statusBarItem) {
         }
     }
     
-    statusBarItem.text = `ENV: ${currentValue || 'Not set'}`;
+    statusBarItem.text = `${currentValue || 'Not set'}`;
     statusBarItem.show();
 }
 
