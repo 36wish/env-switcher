@@ -8,7 +8,7 @@
         "type": "git",
         "url": "https://github.com/36wish/env-switcher"
     },
-    "version": "0.0.1",
+    "version": "0.1.0",
     "engines": {
         "vscode": "^1.60.0"
     },
@@ -32,7 +32,11 @@
                 "properties": {
                     "envSwitcher.options": {
                         "type": "array",
-                        "default": ["int06", "int07", "int08"],
+                        "default": [
+                            "int06",
+                            "int07",
+                            "int08"
+                        ],
                         "description": "Available environment options"
                     },
                     "envSwitcher.targetSetting": {
