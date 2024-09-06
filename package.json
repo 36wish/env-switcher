@@ -1,6 +1,6 @@
 {
-    "name": "env-switcher",
-    "displayName": "ENV switcher",
+    "name": "env-switch",
+    "displayName": "ENV switch",
     "publisher": "36wish",
     "description": "Switch ENV in the status bar",
     "icon": "icon2.png",
