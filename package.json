@@ -1,7 +1,9 @@
 {
     "name": "env-switcher",
-    "displayName": "env switcher",
+    "displayName": "ENV switcher",
+    "publisher": "36wish",
     "description": "Switch ENV in the status bar",
+    "icon": "icon.png",
     "repository": {
         "type": "git",
         "url": "https://github.com/36wish/env-switcher"
