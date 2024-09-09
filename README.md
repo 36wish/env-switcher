@@ -1,65 +1,49 @@
-# env-switcher README
+# ENV Switcher
 
-This is the for your extension "env-switcher". After writing up a brief description, we recommend including the following sections.
+ENV Switcher is a Visual Studio Code extension that allows you to easily switch between different environment configurations directly from the status bar. It's particularly useful for projects that require frequent environment changes, such as switching between different test environments.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- Quick environment switching from the VS Code status bar
+- Configurable environment options
+- Updates user-level settings for consistent environment across workspaces
+- Supports nested configuration settings (e.g., `playwright.env.ENV`)
 
-For example  if there is an image subfolder under your extension project workspace:
+## Usage
 
-\!\[feature X\]\(images/feature-x.png\)
+1. After installation, you'll see the current environment displayed in the status bar (e.g., "int06").
+2. Click it and select the environment you wish to switch to.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Configuration
 
-## Requirements
+Before using the extension, you need to configure it in your VS Code settings:
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+1. Open the Command Palette (`Ctrl+Shift+P` or `Cmd+Shift+P` on macOS)
+2. Type "Preferences: Open Settings (JSON)" and select it
+2. Make sure you have the following section in your `settings.json`
+
+```json
+"playwright.env": {
+    "ENV": "int06",
+    "DB_PW": "xxxx",
+    "SECRET_KEY": "xxxx"
+}
+```
+
+3. Optionally, add the following configuration to your `settings.json`:
+
+```json
+"envSwitcher.options": ["int06", "int07", "int08"],
+"envSwitcher.targetSetting": "playwright.env.ENV"
+```
+
+Adjust the `options` array to include your desired environment options.
+
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
 This extension contributes the following settings:
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+* `envSwitcher.options`: An array of available environment options.
+* `envSwitcher.targetSetting`: The configuration setting to be updated when switching environments (default: "playwright.env.ENV").
 
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
