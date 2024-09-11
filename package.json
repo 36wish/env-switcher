@@ -35,7 +35,8 @@
                         "default": [
                             "int06",
                             "int07",
-                            "int08"
+                            "int08",
+                            "stg"
                         ],
                         "description": "Available environment options"
                     },
