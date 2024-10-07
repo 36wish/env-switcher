@@ -3,7 +3,7 @@
     "displayName": "ENV switch",
     "publisher": "36wish",
     "description": "Switch ENV in the status bar",
-    "icon": "icon2.png",
+    "icon": "icon3.png",
     "repository": {
         "type": "git",
         "url": "https://github.com/36wish/env-switcher"
